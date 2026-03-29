@@ -1,0 +1,84 @@
+<div class="innovation-page">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Innovation Architecture</h1>
+      <p>
+        Designing intelligent digital ecosystems where AI, automation,
+        cloud platforms, and human creativity converge to build
+        scalable future-ready enterprises.
+      </p>
+
+      <button class="explore-btn" (click)="scrollToSection('pillars')">
+        Explore Architecture
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ARCHITECTURE VISION -->
+  <section class="vision">
+    <h2>Our Innovation Vision</h2>
+    <p>
+      Innovation Architecture is not just technology adoption — it is a structured
+      framework that connects business strategy, artificial intelligence,
+      data intelligence, and automated execution into a unified system.
+      We engineer platforms that continuously evolve, learn, and optimize operations.
+    </p>
+  </section>
+
+
+  <!-- CORE PILLARS -->
+  <section id="pillars" class="pillars">
+    <h2>Architecture Pillars</h2>
+
+    <div class="pillars-grid">
+      <div class="pillar-card" *ngFor="let pillar of pillars">
+        <div class="icon">{{ pillar.icon }}</div>
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- AI + ROBOTIC LAYER -->
+  <section class="ai-layer">
+    <h2>AI & Autonomous Intelligence Layer</h2>
+
+    <div class="ai-grid">
+      <div class="ai-card" *ngFor="let ai of aiIdeas">
+        <h3>{{ ai.title }}</h3>
+        <p>{{ ai.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- INNOVATION FLOW -->
+  <section class="flow">
+    <h2>Innovation Delivery Flow</h2>
+
+    <div class="flow-steps">
+      <div class="step" *ngFor="let step of flow">
+        <span>{{ step.no }}</span>
+        <h4>{{ step.title }}</h4>
+        <p>{{ step.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Build Future-Ready Systems</h2>
+    <p>
+      Transform ideas into scalable intelligent platforms using structured
+      innovation architecture and AI-driven engineering.
+    </p>
+
+    <button class="cta-btn">Start Innovation Journey →</button>
+  </section>
+
+</div>

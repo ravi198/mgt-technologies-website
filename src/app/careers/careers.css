@@ -1,0 +1,225 @@
+/* Reset/Root styles (optional but helpful) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background: #4b0082; /* Purple like Wipro */
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* thoda depth add kiya */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.8rem; 
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+ul li a:hover {
+  color: #d4af37; /* gold/yellow accent for hover – premium feel */
+}
+
+.login-btn {
+  background: white;
+  color: #4b0082;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-btn:hover {
+  background: #f0e6ff;
+  transform: translateY(-2px);
+}
+
+/* Hero Section – yaha background image + overlay best practice */
+.hero {
+  height: 85vh; /* thoda zyada height for impact */
+  background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* example – diverse team collab (Unsplash/Pexels style) */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 2; /* text upar rahe */
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  opacity: 0.95;
+}
+
+/* Search bar section */
+.search-bar-section {
+  background: #f8f9fa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 1.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: border 0.3s;
+}
+
+.search-input:focus {
+  border-color: #4b0082;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 0, 130, 0.2);
+}
+
+.search-btn {
+  padding: 1.2rem 3rem;
+  background: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  background: #3a0066;
+  transform: translateY(-3px);
+}
+
+/* Categories */
+.categories-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.categories-section h2 {
+  margin-bottom: 6rem;  
+  text-align: center;
+  font-size: 50px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.cta-btn {
+  margin-top: 1.2rem;
+  padding: 0.9rem 2.2rem;
+  background: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cta-btn:hover {
+  background: #3a0066;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 3rem; }
+  .subtitle { font-size: 1.6rem; }
+  .tagline { font-size: 1.3rem; }
+  nav { flex-direction: column; gap: 1rem; }
+  ul { flex-direction: column; gap: 1rem; text-align: center; }
+}

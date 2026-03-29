@@ -1,0 +1,91 @@
+<section class="contact-section">
+    <!-- Keyboard image as full background -->
+    <div class="background-image">
+        <img src="assets/images/keyboard.png" alt="Keyboard Background" class="bg-img">
+        <!-- Gradient overlay for readability -->
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="contact-content">
+            <div class="left-column">
+                <h1>Contact us</h1>
+                <h2>How can we help?</h2>
+                <p class="description">
+                    To submit a question or request, please fill out the form.<br>
+                    We will respond as soon as possible.
+                </p>
+
+                <form class="contact-form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Inquiry type <span class="required">*</span></label>
+                        <select [(ngModel)]="form.inquiryType" name="inquiryType" required>
+                            <option value="" disabled selected>Please select</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="services">Services & Solutions</option>
+                            <option value="career">Career Opportunities</option>
+                            <option value="partnership">Partnership / Collaboration</option>
+                            <option value="support">Support / Technical Help</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>First name<span class="required">*</span></label>
+                            <input type="text" [(ngModel)]="form.firstName" name="firstName" required
+                                placeholder="First name">
+                        </div>
+                        <div class="form-group half">
+                            <label>Last name <span class="required"></span></label>
+                            <input type="text" [(ngModel)]="form.lastName" name="lastName" required
+                                placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" [(ngModel)]="form.email" name="email" required placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" [(ngModel)]="form.company" name="company" placeholder="Company name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" [(ngModel)]="form.phone" name="phone" placeholder="Phone number">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+
+            <!-- Right side content (now overlays on background) -->
+            <div class="right-column">
+                <h3>Other ways to contact us</h3>
+                <ul>
+                    <li>
+                        <strong>Find a location</strong><br>
+                        <a href="#" target="_blank">Find your local MGT office</a>
+                    </li>
+                    <li>
+                        <strong>Email</strong><br>
+                        <a href="mailto:support@mgttechnologies.com">support@mgttechnologies.com</a>
+                    </li>
+                    <li>
+                        <strong>Phone</strong><br>
+                        +91 8121207065
+                    </li>
+                    <li>
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/918012345678" target="_blank" class="whatsapp-link">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+
+<div class="apply-container container">
+  <h1>Apply for IT Internship Program</h1>
+  <p class="subtitle">Please fill in your details and upload your resume to apply.</p>
+
+  <form [formGroup]="applyForm" (ngSubmit)="onSubmit()" class="apply-form">
+    <div class="form-group">
+      <label for="fullName">Full Name *</label>
+      <input id="fullName" formControlName="fullName" type="text" class="form-control" 
+             [ngClass]="{ 'is-invalid': submitted && f['fullName'].errors }">
+      <div *ngIf="submitted && f['fullName'].errors" class="invalid-feedback">
+        Full name is required (min 3 characters).
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input id="email" formControlName="email" type="email" class="form-control" 
+             [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input id="phone" formControlName="phone" type="tel" class="form-control" 
+             [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+      <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+        Valid 10-digit phone number is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="linkedin">LinkedIn Profile (optional)</label>
+      <input id="linkedin" formControlName="linkedin" type="url" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="coverLetter">Cover Letter (optional, max 1000 chars)</label>
+      <textarea id="coverLetter" formControlName="coverLetter" rows="5" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group file-upload">
+      <label for="resume">Upload Resume * (PDF/DOC/DOCX, max 5MB)</label>
+      <input id="resume" type="file" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" class="form-control">
+      <div *ngIf="fileError" class="invalid-feedback">{{ fileError }}</div>
+      <div *ngIf="selectedFile" class="file-name">Selected: {{ selectedFile.name }}</div>
+      <div *ngIf="submitted && !selectedFile" class="invalid-feedback">Resume is required.</div>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" id="acceptTerms" formControlName="acceptTerms" class="form-check-input"
+             [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }">
+      <!-- <label for="acceptTerms" class="form-check-label"> -->
+        I agree to the <a href="#" target="_blank">Terms & Conditions</a> and confirm that all information provided is true.
+      <!-- </label> -->
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        You must agree to the terms and conditions.
+      </div>
+    </div>
+
+    <button type="submit" class="primary-btn" [disabled]="applyForm.invalid || !selectedFile">
+      Submit Application
+    </button>
+
+    <a routerLink="/category/internships" class="back-link">← Back to Internship Details</a>
+  </form>
+</div>

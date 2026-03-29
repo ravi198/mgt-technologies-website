@@ -1,0 +1,44 @@
+<header class="fixed-white-header">
+  <div class="header-container">
+    <!-- Left: Logo -->
+    <div class="logo-section">
+      <a routerLink="/" class="logo-link">
+        <img src="assets/images/mgt-logo.png" alt="MGT Technologies" class="logo-img">
+      </a>
+    </div>
+
+    <!-- Center: Navigation Menu -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">What we do ▼</a></li>
+        <li><a href="#">Who we are ▼</a></li>
+        <li><a href="#">Insights ▼</a></li>
+
+        <!-- Careers with Dropdown -->
+        <li class="dropdown">
+          <a routerLink="/careers">Careers ▼</a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/careers">Join Us</a></li>
+            <!-- Future items -->
+            <!-- <li><a href="#">Internships</a></li> -->
+            <!-- <li><a href="#">Life at MGT</a></li> -->
+          </ul>
+        </li>
+
+        <li><a href="#">Newsroom ▼</a></li>
+        <li><a href="#">Investors ▼</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Icons + Contact -->
+    <div class="right-section">
+      <button class="icon-btn search" aria-label="Search">
+        Q
+      </button>
+      <div class="language">
+        Global (En) ▼
+      </div>
+      <a routerLink="/contact" class="contact-btn">Contact Us</a>
+    </div>
+  </div>
+</header>

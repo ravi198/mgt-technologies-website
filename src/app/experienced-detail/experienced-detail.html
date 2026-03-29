@@ -1,0 +1,272 @@
+<!-- Experienced Professionals – Premium Light Version -->
+
+<section class="experienced-hero">
+  <div class="hero-bg"></div> <!-- CSS mein background set karenge -->
+  <div class="hero-content container">
+    <h1>Build What Lasts. Lead What Matters.</h1>
+    <p class="subtitle">Your next chapter starts where impact meets freedom.</p>
+    <p class="tagline">At MGT Technologies, experienced leaders don't chase titles — they craft enduring systems, ignite
+      teams, and enjoy the autonomy they've earned. This is where your expertise writes the future.</p>
+
+    <div class="hero-ctas">
+      <button class="primary-btn">Explore Strategic Roles</button>
+    </div>
+  </div>
+</section>
+
+<!-- Core Strengths Section -->
+<section class="strengths-section">
+  <div class="container">
+    <h2>Your Expertise Deserves This Stage</h2>
+
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="icon">🏛️</div>
+        <h3>Architect Enduring Platforms</h3>
+        <p>Design systems that scale to billions of users and last decades — not quarterly features. Influence roadmaps
+          that define industries.</p>
+      </div>
+
+      <div class="strength-item">
+        <div class="icon">🧭</div>
+        <h3>Lead with True Autonomy</h3>
+        <p>Own outcomes end-to-end. No endless approvals, no politics — just principled decisions and visible credit for
+          deep impact.</p>
+      </div>
+
+      <div class="strength-item">
+        <div class="icon">🔥</div>
+        <h3>Mentor & Multiply Talent</h3>
+        <p>Shape the next generation of engineers while accelerating your own growth. Many principals here built entire
+          orgs from 5 to 50+ people.</p>
+      </div>
+
+      <div class="strength-item">
+        <div class="icon">⚖️</div>
+        <h3>Life-First Flexibility</h3>
+        <p>Hybrid/remote built for senior rhythm — family time, deep work blocks, global travel when it matters. Not
+          rigid 9-6 culture.</p>
+      </div>
+      <div class="strength-item">
+        <div class="icon">⚖️</div>
+        <h3>Life-First Flexibility</h3>
+        <p>Hybrid/remote built for senior rhythm — family time, deep work blocks, global travel when it matters. Not
+          rigid 9-6 culture.</p>
+      </div>
+
+      <div class="strength-item">
+        <div class="icon">⚖️</div>
+        <h3>Life-First Flexibility</h3>
+        <p>Hybrid/remote built for senior rhythm — family time, deep work blocks, global travel when it matters. Not
+          rigid 9-6 culture.</p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Legacy Voices (Unique Stories) -->
+<section class="voices-section">
+  <div class="container">
+    <h2>From Those Who've Been There</h2>
+
+    <div class="voices-grid">
+      @for (voice of legacyVoices(); track voice.name) {
+      <div class="voice-card">
+        <img [src]="voice.photo" alt="{{voice.name}}" class="avatar" />
+        <div class="content">
+          <h4>{{voice.name}}</h4>
+          <p class="role">{{voice.role}} • {{voice.years}} years at MGT</p>
+          <blockquote>
+            "{{voice.quote}}"
+          </blockquote>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Impact Numbers -->
+<section class="impact-numbers">
+  <div class="container">
+    <div class="number-item">
+      <span class="big-number">11.4</span>
+      <p>Average strategic experience in leadership roles</p>
+    </div>
+    <div class="number-item">
+      <span class="big-number">48%</span>
+      <p>Senior hires through trusted internal networks</p>
+    </div>
+    <div class="number-item">
+      <span class="big-number">₹58L+</span>
+      <p>Median total compensation (12+ YOE, 2025)</p>
+    </div>
+  </div>
+</section>
+
+<!-- Open Roles Section – More Jobs + View JD + Apply -->
+<section class="roles-section">
+  <div class="container">
+    <h2>Strategic Roles for Seasoned Builders</h2>
+    <p class="section-subtitle">Explore current opportunities where your experience drives real impact. New senior
+      positions added weekly.</p>
+
+    <!-- Optional: Quick filters -->
+    <div class="filters-bar">
+      <input type="text" placeholder="Filter by keyword (e.g. AI, Cloud, Director)" class="filter-input"
+        [ngModel]="keywordFilter()" (ngModelChange)="keywordFilter.set($event)" />
+      <select class="filter-select" [ngModel]="locationFilter()" (ngModelChange)="locationFilter.set($event)"
+        name="locationFilter">
+
+        <!-- Placeholder option -->
+        <option value="" disabled selected hidden>
+          Location
+        </option>
+
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Gurugram">Gurugram</option>
+        <option value="Remote">Remote</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="Pune">Pune</option>
+        <option value="Chennai">Chennai</option>
+
+      </select>
+      <button class="filter-btn" (click)="applyFilters()">Search</button>
+    </div>
+
+    <div class="roles-grid">
+      @for (role of filteredRoles(); track role.id) {
+      <div class="role-card">
+        <div class="card-header">
+          <h3>{{role.title}}</h3>
+          <span class="role-level">{{role.level || 'Senior/Principal'}}</span>
+        </div>
+
+        <div class="meta-info">
+          <span>{{role.location}}</span>
+          <span>•</span>
+          <span>{{role.type}}</span>
+          <span>•</span>
+          <span class="salary-hint">{{role.salaryRange || '₹45-75L+'}}</span>
+        </div>
+
+        <ul class="key-points">
+          @for (point of role.highlights; track $index) {
+          <li>{{point}}</li>
+          }
+        </ul>
+
+        <div class="card-actions">
+          <button type="button" class="apply-btn" (click)="applyForRole(role.id, role.title)">
+            Express Interest
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="load-more-cta">
+      <p>Want more? We frequently open exclusive roles not listed publicly.</p>
+      <button class="outline-btn">Join Talent Network</button>
+    </div>
+  </div>
+</section>
+
+<!-- Job Details & Apply Modal -->
+@if (showModal()) {
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-modal" (click)="closeModal()">×</button>
+
+    <div class="modal-header">
+      <h2>{{ selectedRole()?.title }}</h2>
+      <p class="modal-meta">
+        {{ selectedRole()?.location }} • {{ selectedRole()?.type }} • {{ selectedRole()?.salaryRange || 'Competitive' }}
+      </p>
+    </div>
+
+    <div class="modal-body">
+      <!-- JD Content – Unique & Detailed -->
+      <div class="jd-section">
+        <h3>Role Overview</h3>
+        <p>Be part of MGT's core innovation engine. This role offers autonomy to shape long-term tech strategy while
+          mentoring high-caliber teams in a remote-first, outcome-focused culture.</p>
+      </div>
+
+      <div class="jd-section">
+        <h3>Key Responsibilities</h3>
+        <ul>
+          @for (point of selectedRole()?.highlights || []; track $index) {
+          <li>{{ point }}</li>
+          }
+          <li>Collaborate with C-level to align tech with business vision</li>
+          <li>Drive architectural decisions for scalable, secure systems</li>
+          <li>Foster engineering excellence & talent development</li>
+        </ul>
+      </div>
+
+      <div class="jd-section">
+        <h3>Requirements & Qualifications</h3>
+        <ul>
+          <li>10+ years in software engineering/architecture</li>
+          <li>Proven track record leading large-scale projects/teams</li>
+          <li>Deep expertise in {{ selectedRole()?.title?.includes('AI') ? 'AI/ML' :
+            selectedRole()?.title?.includes('Cloud') ? 'cloud-native' : 'distributed systems' }}</li>
+          <li>Strong communication & leadership skills</li>
+          <li>Bachelor's/Master's in CS or related field</li>
+        </ul>
+      </div>
+
+      <div class="jd-section perks">
+        <h3>Why Join MGT?</h3>
+        <ul class="perks-list">
+          <li>₹{{ selectedRole()?.salaryRange || '50L+' }} CTC + ESOPs & performance bonuses</li>
+          <li>Remote/hybrid flexibility + unlimited PTO policy</li>
+          <li>Global exposure with Fortune 500 clients</li>
+          <li>Learning stipend & conference budget</li>
+          <li>Health, family & wellness benefits</li>
+        </ul>
+      </div>
+
+      <!-- Apply Section inside same modal -->
+      <div class="apply-section">
+        <h3>Ready to Express Interest?</h3>
+        <p>Submit your details – our team will reach out within 48 hours for a confidential chat.</p>
+
+        <form class="apply-form" (ngSubmit)="submitApplication()">
+          <input type="text" placeholder="Full Name" required [(ngModel)]="applyName" name="name" />
+          <input type="email" placeholder="Professional Email" required [(ngModel)]="applyEmail" name="email" />
+          <textarea placeholder="Why you're excited about this role (optional)" rows="4" [(ngModel)]="applyMessage"
+            name="message"></textarea>
+          <div class="resume-upload">
+            <label for="resumeUpload" class="upload-box">
+              <div class="upload-content">
+                <span class="upload-icon">📄</span>
+                <p>
+                  <strong>Attach Resume</strong><br>
+                  PDF / DOC / DOCX (Max 2MB)
+                </p>
+                <small>Click to upload or drag & drop</small>
+              </div>
+            </label>
+
+            <input id="resumeUpload" type="file" accept=".pdf,.doc,.docx" (change)="onFileSelected($event)" hidden />
+
+            <!-- Selected file name -->
+            <p class="file-name" *ngIf="selectedFileName">
+              Selected: {{ selectedFileName }}
+            </p>
+          </div>
+
+          <button type="submit" class="submit-apply-btn" [disabled]="!applyName || !applyEmail">
+            Submit Interest
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+}

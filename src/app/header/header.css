@@ -1,0 +1,142 @@
+.fixed-white-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #ffffff;              /* White background */
+  height: 70px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-section {
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 75px;
+  width: auto;
+}
+
+.logo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.main-nav a {
+  color: #000000;                   /* Black text */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #007bff;                   /* Blue hover like TCS */
+}
+
+/* Right section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon-btn.search {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.language {
+  color: #000000;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.contact-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #0056b3;
+}
+
+/* Mobile responsive (hide menu or add hamburger later) */
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none;                  /* Hide on small screens - add hamburger if needed */
+  }
+  
+  .header-container {
+    padding: 0 20px;
+  }
+}
+
+.main-nav .dropdown {
+  position: relative;
+}
+
+.main-nav .dropdown-toggle {
+  cursor: pointer;
+}
+
+.main-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  min-width: 180px;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.main-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.main-nav .dropdown-menu li a {
+  display: block;
+  padding: 6px 16px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav .dropdown-menu li a:hover {
+  background: #f0f5ff;
+  color: #2563eb;
+}

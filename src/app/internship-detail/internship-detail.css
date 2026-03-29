@@ -1,0 +1,114 @@
+.intern-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 51, 102, 0.55); /* dark blue overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content h1 { font-size: 3.8rem; margin-bottom: 0.8rem; }
+.subtitle { font-size: 1.6rem; max-width: 700px; }
+
+.intern-detail-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.detail-content {
+  line-height: 1.7;
+}
+
+.intro-para {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+h2 { color: #003366; margin: 2.5rem 0 1rem; }
+h3 { color: #004488; margin: 1.8rem 0 1rem; }
+
+.key-features ul, .benefits ul, .eligibility ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.key-features li, .benefits li, .eligibility li {
+  margin-bottom: 1rem;
+  padding-left: 1.8rem;
+  position: relative;
+}
+
+.key-features li::before, .benefits li::before, .eligibility li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0066cc;
+}
+
+.apply-now {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+  width:133%;
+}
+
+.primary-btn {
+  background: #0066cc;
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.sidebar .quick-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 992px) {
+  .intern-detail-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,72 @@
+<!-- Header / Nav (simple for now – add router links later) -->
+<header class="header">
+    <div class="container">
+        <nav>
+            <div class="logo">MGT Technologies</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Life at MGT</a></li>
+                <li class="active"><a href="#">Careers</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Join Talent Network</a></li>
+            </ul>
+            <button class="login-btn">Login</button>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section – Full width, team image bg -->
+<section class="hero"
+    [style.background-image]="'ur[](https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80)'">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1>{{ heroTitle }}</h1>
+            <p class="subtitle">{{ heroSubtitle }}</p>
+            <p class="tagline">Work on meaningful projects with a diverse, high-energy team.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="search-bar-section">
+    <div class="container">
+        <div class="search-form">
+            <input type="text" [(ngModel)]="searchSkills" placeholder="Search by 'Skills' or 'Keywords' or 'Job ID'"
+                class="search-input" />
+            <input type="text" [(ngModel)]="searchLocation" placeholder="Search by Location" class="search-input" />
+            <button class="search-btn" (click)="onSearch()">Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section – Early vs Experienced -->
+<section class="categories-section">
+    <div class="container">
+        <h2>Where Do You Fit</h2>
+        <div class="category-grid">
+            @for (cat of categories(); track cat.title) {
+            <div class="category-card" (click)="selectCategory(cat.category)">
+                <img [src]="cat.imageUrl" alt="{{ cat.title }}" class="card-img" />
+                <div class="card-content">
+                    <h3>{{ cat.title }}</h3>
+                    <p>{{ cat.description }}</p>
+                    <button class="cta-btn" [routerLink]="['/category', cat.category]">
+                        {{ cat.ctaText }}
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Apply Modal (same as before) -->
+@if (showApplyModal()) {
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeModal()">×</button>
+        <h2>Apply for {{ selectedJobTitle() }}</h2>
+        <!-- Form fields same as previous -->
+    </div>
+</div>
+}

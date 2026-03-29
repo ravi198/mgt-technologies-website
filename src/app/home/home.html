@@ -1,0 +1,418 @@
+<section class="hero-video">
+  <video autoplay muted loop playsinline class="hero-bg-video">
+
+    <source src="assets/videos/tech-background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <img src="assets/images/tech-background.mp4" alt="Background" class="video-fallback" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1>MGT Technologies</h1>
+    <p class="tagline">Powering Data. Driving Innovation.</p>
+    <p class="subtitle">
+      Transforming ideas into powerful digital solutions with cutting-edge technology
+    </p>
+
+    <div class="hero-buttons">
+      <a routerLink="/services" class="btn primary">Explore Services</a>
+    </div>
+  </div>
+</section>
+<section class="innovation-wave white-bg">
+  <div class="container">
+    <h2 class="wave-title">Igniting Tomorrow's Possibilities</h2>
+    <p class="wave-subtitle">
+      At MGT Technologies, we don't just build software — we architect intelligent ecosystems that evolve with your
+      vision.
+    </p>
+  </div>
+</section>
+
+<section class="feature-section">
+
+  <div class="card-wrapper">
+
+    <!-- Card 1 -->
+    <div class="feature-card">
+      <img src="assets/images/team.jpg" alt="Our People" class="card-img">
+
+      <div class="overlay"></div>
+
+      <div class="card-content">
+        <span class="tag">OUR PEOPLE</span>
+
+        <h2>
+          Join Our Diverse <br>
+          Team Of Tech <br>
+          Pioneers
+        </h2>
+
+
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="feature-card">
+      <img src="assets/images/innovation.jpg" alt="Why R Systems" class="card-img">
+
+      <div class="overlay"></div>
+
+      <div class="card-content">
+        <span class="tag">WHY MGT Technology</span>
+
+        <h2>
+          Learn What <br>
+          Makes Us <br>
+          Different
+        </h2>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feature-card">
+      <img src="assets/images/location.jpg" alt="Locations" class="card-img">
+
+      <div class="overlay"></div>
+
+      <div class="card-content">
+        <span class="tag">OUR LOCATIONS</span>
+
+        <h2>
+          Explore Our <br>
+          Global Footprint
+        </h2>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="solutions-section">
+
+  <!-- Heading -->
+  <div class="section-header">
+    <h2>Our Solutions & Services</h2>
+
+    <p>
+      Harness our data and AI expertise to power enterprise-wide
+      transformation and performance
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="solutions-grid">
+
+    <!-- Card 1 -->
+    <div class="solution-card">
+      <div class="image-circle">
+        <img src="assets/images/strategy.jpg" alt="Strategy">
+      </div>
+
+      <h3>Strategy & Design</h3>
+
+      <p>
+        Shape experiences, strategies, and operations through
+        AI-driven innovation and human-centered design.
+      </p>
+      <!-- 
+      <a href="#" class="learn-btn">
+        Learn More <span>➜</span>
+      </a> -->
+    </div>
+
+
+    <!-- Card 2 -->
+    <div class="solution-card">
+      <div class="image-circle">
+        <img src="assets/images/data.jpg" alt="Data">
+      </div>
+
+      <h3>Data & Analytics</h3>
+
+      <p>
+        Turn data into enterprise intelligence to accelerate
+        transformation and maximize performance at scale.
+      </p>
+
+      <!-- <a href="#" class="learn-btn">
+        Learn More <span>➜</span>
+      </a> -->
+    </div>
+
+
+    <!-- Card 3 -->
+    <div class="solution-card">
+      <div class="image-circle">
+        <img src="assets/images/enterprise.jpg" alt="Enterprise">
+      </div>
+
+      <h3>Enterprise Technology</h3>
+
+      <p>
+        Engineer, modernize, and integrate AI technologies
+        for enhanced efficiency and next-gen experiences.
+      </p>
+
+      <!-- <a href="#" class="learn-btn">
+        Learn More <span>➜</span>
+      </a> -->
+    </div>
+
+
+    <!-- Card 4 -->
+    <div class="solution-card">
+      <div class="image-circle">
+        <img src="assets/images/digital.jpg" alt="Digital">
+      </div>
+
+      <h3>Digital Operations</h3>
+
+      <p>
+        Combine expert knowledge, AI-powered technologies,
+        and distinct operating models to address business challenges.
+      </p>
+
+      <!-- <a href="#" class="learn-btn">
+        Learn More <span>➜</span>
+      </a> -->
+    </div>
+
+  </div>
+
+</section>
+<section class="digital-section" >
+<div class="container">
+
+  <!-- Left Content -->
+  <div class="engineering-text">
+    <h1>Purposeful Digital Engineering</h1>
+
+    <h1 class="engineering-desc">
+      Our approach combines intelligent automation, scalable cloud systems,
+      and data-driven innovation to help organizations build future-ready
+      digital ecosystems.
+    </h1>
+
+  </div>
+
+  <div class="container">
+
+    <div class="innovation-grid">
+
+      <div class="innovation-box" *ngFor="let item of innovationCards">
+        <div class="img-wrapper">
+          <img [src]="item.image" [alt]="item.title" />
+        </div>
+
+        <div class="box-content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- </section> -->
+
+</div>
+</section>
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title">Meet Our Leadership</h2>
+    <p class="section-subtitle">
+      Visionaries driving innovation and excellence at MGT Technologies
+    </p>
+
+    <div class="team-slider">
+      <div class="team-track">
+        <div class="team-card" *ngFor="let member of teamMembers" (click)="openMember(member)">
+          <img [src]="member.image" [alt]="member.name" class="team-img" />
+
+          <div class="team-info">
+            <h3>{{ member.name }}</h3>
+            <p class="designation">{{ member.designation }}</p>
+            <p class="description">{{ member.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Modal Overlay -->
+<div class="sv-modal" *ngIf="selectedMember" (click)="closePopup()">
+  <div class="sv-modal-card" (click)="$event.stopPropagation()">
+
+    <!-- Yeh naya canvas add karo – confetti sirf iske andar rahega -->
+    <canvas #confettiCanvas class="confetti-canvas"></canvas>
+
+    <!-- Baaki modal content (image, name, desc, button etc.) -->
+    <img [src]="selectedMember.image" class="sv-img" />
+    <h2>{{ selectedMember.name }}</h2>
+    <p class="sv-role">{{ selectedMember.designation }}</p>
+    <p class="sv-desc">{{ selectedMember.description }}</p>
+    <a [href]="selectedMember.linkedin" target="_blank" class="sv-btn">Connect on LinkedIn</a>
+
+    <button class="sv-close" (click)="closePopup()">✕</button>
+  </div>
+</div>
+
+
+<!-- How Can We Help Section -->
+<section class="help-section">
+  <div class="container">
+    <h2 class="help-title">How can we help?</h2>
+    <p class="help-subtitle">
+      Whether you need custom software, AI solutions, cloud migration, or just want to discuss your next big idea —
+      we're here to assist.
+    </p>
+
+    <div class="help-cta">
+      <a routerLink="/contact" class="glow-contact-btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHATBOT ================= -->
+<div class="chatbot-container">
+
+  <!-- Floating chat toggle button -->
+  <button type="button" class="chatbot-toggle" (click)="toggleChat($event)" aria-label="Open chat">
+    💬
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chatbot" *ngIf="isChatOpen">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <span>MGT Assistant</span>
+      <button class="close-btn" (click)="toggleChat($event)">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-body" #chatBody>
+      <div *ngFor="let msg of messages" class="message-wrapper">
+        <div class="message" [ngClass]="{
+            'bot': msg.type === 'bot',
+            'user': msg.type === 'user'
+          }">
+          <div class="message-text">{{ msg.text }}</div>
+
+          <!-- Quick reply buttons (only for bot messages) -->
+          <div class="suggestions" *ngIf="msg.suggestions?.length">
+            <button *ngFor="let s of msg.suggestions" (click)="quickReply(s)">
+              {{ s }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input">
+      <input type="text" placeholder="Type a message..." [(ngModel)]="userInput" (keyup.enter)="sendMessage()"
+        autofocus />
+      <button (click)="sendMessage()" [disabled]="!userInput.trim()">
+        ➤
+      </button>
+    </div>
+    <section class="solutions-section">
+
+      <!-- Heading -->
+      <div class="section-header">
+        <h2>Our Solutions & Services</h2>
+
+        <p>
+          Harness our data and AI expertise to power enterprise-wide
+          transformation and performance
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="solutions-grid">
+
+        <!-- Card 1 -->
+        <div class="solution-card">
+          <div class="image-circle">
+            <img src="assets/images/strategy.jpg" alt="Strategy">
+          </div>
+
+          <h3>Strategy & Design</h3>
+
+          <p>
+            Shape experiences, strategies, and operations through
+            AI-driven innovation and human-centered design.
+          </p>
+
+          <a href="#" class="learn-btn">
+            Learn More <span>➜</span>
+          </a>
+        </div>
+
+
+        <!-- Card 2 -->
+        <div class="solution-card">
+          <div class="image-circle">
+            <img src="assets/images/data.jpg" alt="Data">
+          </div>
+
+          <h3>Data & Analytics</h3>
+
+          <p>
+            Turn data into enterprise intelligence to accelerate
+            transformation and maximize performance at scale.
+          </p>
+
+          <a href="#" class="learn-btn">
+            Learn More <span>➜</span>
+          </a>
+        </div>
+
+
+        <!-- Card 3 -->
+        <div class="solution-card">
+          <div class="image-circle">
+            <img src="assets/images/enterprise.jpg" alt="Enterprise">
+          </div>
+
+          <h3>Enterprise Technology</h3>
+
+          <p>
+            Engineer, modernize, and integrate AI technologies
+            for enhanced efficiency and next-gen experiences.
+          </p>
+
+          <a href="#" class="learn-btn">
+            Learn More <span>➜</span>
+          </a>
+        </div>
+
+
+        <!-- Card 4 -->
+        <div class="solution-card">
+          <div class="image-circle">
+            <img src="assets/images/digital.jpg" alt="Digital">
+          </div>
+
+          <h3>Digital Operations</h3>
+
+          <p>
+            Combine expert knowledge, AI-powered technologies,
+            and distinct operating models to address business challenges.
+          </p>
+
+          <a href="#" class="learn-btn">
+            Learn More <span>➜</span>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+</div>
