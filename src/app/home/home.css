@@ -262,7 +262,7 @@
 /* ================= SMALL LAPTOP ================= */
 @media (max-width: 1200px) {
   .feature-section {
-    padding: 60px 25px;
+     padding: 20px 4px 20px 1px;
   }
 
   .card-wrapper {
