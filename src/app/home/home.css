@@ -247,6 +247,7 @@
   .feature-section {
     padding: 20px 12px;
     margin: 0;
+    overflow: hidden;
   }
 
   .card-wrapper {
@@ -271,15 +272,27 @@
 
   .card-img,
   .feature-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     width: 100%;
     height: 100%;
-    object-fit: contain;      /* full image visible */
+
+    object-fit: cover;
     object-position: center;
-    background: #000;         /* empty side fill */
+
     display: block;
+
+    /* IMPORTANT FIX */
+    border-radius: inherit;
   }
 
   .overlay {
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
       to top,
       rgba(0, 0, 0, 0.65),
@@ -288,7 +301,9 @@
   }
 
   .card-content {
-    padding: 16px;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
 
   .tag {
