@@ -188,25 +188,20 @@
 
 .feature-card {
   position: relative;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   height: 520px;
   border-radius: 18px;
   overflow: hidden;
 }
 
-/* IMAGE */
 .card-img {
   position: absolute;
-  top: 0;
-  left: 0;
-
+  inset: 0;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  /* IMPORTANT */
   object-position: center;
-  /* center focus */
 }
 
 /* DARK GRADIENT */
@@ -242,39 +237,43 @@
   bottom: 35px;
   left: 28px;
   right: 28px;
-
+  margin: 0;
   font-size: 30px;
   font-weight: 700;
   line-height: 1.3;
 }
 @media (max-width: 768px) {
 
-   .feature-section {
-    padding: 30px 15px;
-    width: 100%;
+  .feature-section {
+    padding: 20px 12px;
     margin: 0;
   }
 
   .card-wrapper {
     grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 0;
+    gap: 18px;
     max-width: 100%;
+    margin: 0;
   }
 
   .feature-card {
     width: 100%;
-    height: 320px;          /* reduced */
+    max-width: 100%;
+    height: 320px;
     border-radius: 18px;
-    overflow: hidden;
-    position: relative;
   }
 
-  .feature-card img {
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(3),
+  .feature-card:nth-child(4) {
+    height: 260px;
+  }
+
+  .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
   }
 
   .card-content {
@@ -284,18 +283,15 @@
   .tag {
     top: 16px;
     left: 16px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    font-size: 12px;
   }
 
   .card-content h2 {
-    position: absolute;
-    bottom: 18px;
     left: 16px;
     right: 16px;
-    font-size: 24px;
+    bottom: 18px;
+    font-size: 22px;
     line-height: 1.25;
-    margin: 0;
   }
 }
 /* BUTTON */
