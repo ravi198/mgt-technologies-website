@@ -1177,7 +1177,6 @@
     margin: 0;
     overflow: hidden;
     max-width: 100%;
-    width: calc(100vw - 60px);
   }
 
   .digital-engineering .container {
@@ -1368,14 +1367,20 @@
   .innovation-grid {
     grid-template-columns: 1fr;
     gap: 18px;
-    width: 100%;
     max-width: 100%;
     margin: 0;
+    padding: 0 12px 25px;
   }
 
   .innovation-box {
     width: 100%;
-    border-radius: 14px;
+    height: auto;           /* auto height */
+    min-height: 420px;      /* enough content space */
+    margin: 0 auto 20px;    /* bottom margin */
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
   }
 
   .img-wrapper {
