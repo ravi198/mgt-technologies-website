@@ -1171,8 +1171,6 @@
   margin-left: -162px;
 }
 
-/* ===== SECTION ===== */
-
 /* ================= DESKTOP DEFAULT ================= */
 .solutions-section {
   padding: 80px 20px;
@@ -1353,7 +1351,12 @@
 /* ================= SMALL MOBILE ================= */
 @media (max-width: 480px) {
   .solutions-section {
-    padding: 40px 10px;
+    padding: 20px 4px 20px 1px;
+    margin: 0;
+    overflow: hidden;
+    width: calc(100vw - 60px);
+    max-width: 100%;
+    border-radius: 18px;
   }
 
   .section-header h2 {
