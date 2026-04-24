@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApprenticeshipDetail } from './apprenticeship-detail';
+import { ActivatedRoute } from '@angular/router';
 
 describe('ApprenticeshipDetail', () => {
   let component: ApprenticeshipDetail;
@@ -8,7 +9,19 @@ describe('ApprenticeshipDetail', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApprenticeshipDetail]
+      imports: [ApprenticeshipDetail],
+      providers: [
+      {
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: {
+              get: (key: string) => '1'
+            }
+          }
+        }
+      }
+    ]
     })
     .compileComponents();
 

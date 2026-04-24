@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApplyForm } from './apply-form';
+import { ActivatedRoute } from '@angular/router';
 
 describe('ApplyForm', () => {
   let component: ApplyForm;
@@ -8,7 +9,19 @@ describe('ApplyForm', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApplyForm]
+      imports: [ApplyForm],
+      providers: [
+      {
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: {
+              get: (key: string) => '1'
+            }
+          }
+        }
+      }
+    ]
     })
     .compileComponents();
 

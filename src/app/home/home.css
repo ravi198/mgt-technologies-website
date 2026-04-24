@@ -170,7 +170,7 @@
 
 /* ================= DESKTOP DEFAULT ================= */
 .feature-section {
-  padding: 80px 40px;
+  padding: 20px 4px 20px 1px;
   background: #f3f5f7;
   width: 100%;
   max-width: 100%;
@@ -1163,16 +1163,6 @@
   }
 }
 
-/* ===== SECTION ===== */
-
-.solutions-section {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #1e3a8a, #0891b2, #312e81);
-  text-align: center;
-  width: 1666px;
-  margin-left: -162px;
-}
-
 .digital-section {
   padding: 80px 20px;
   background: linear-gradient(to right, #e0e1e3, #0891b2, #dad9e2);
@@ -1180,38 +1170,50 @@
   width: 1666px;
   margin-left: -162px;
 }
+
+/* ===== SECTION ===== */
+
+/* ================= DESKTOP DEFAULT ================= */
+.solutions-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1e3a8a, #0891b2, #312e81);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 /* HEADER */
+.section-header {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 .section-header h2 {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 12px;
   color: #f2f4f6;
-  margin-left: 148px;
 }
 
 .section-header p {
   max-width: 760px;
-  margin-left: 525px;
+  margin: 0 auto;
   font-size: 18px;
   color: #f2f4f6;
   line-height: 1.6;
 }
 
 /* GRID */
-
 .solutions-grid {
-  margin-top: 70px;
+  margin: 70px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
   gap: 40px;
   max-width: 1200px;
-  margin-left: 305px;
-  margin-right: auto;
 }
 
 /* CARD */
-
 .solution-card {
   padding: 10px 20px;
   transition: 0.3s ease;
@@ -1222,11 +1224,10 @@
 }
 
 /* IMAGE CIRCLE */
-
 .image-circle {
   width: 200px;
   height: 200px;
-  margin: auto;
+  margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -1239,7 +1240,6 @@
 }
 
 /* TITLE */
-
 .solution-card h3 {
   margin-top: 25px;
   font-size: 24px;
@@ -1248,7 +1248,6 @@
 }
 
 /* DESCRIPTION */
-
 .solution-card p {
   margin-top: 15px;
   color: #f2f4f6;
@@ -1256,8 +1255,7 @@
   font-size: 16px;
 }
 
-/* LEARN BUTTON */
-
+/* BUTTON */
 .learn-btn {
   display: inline-flex;
   align-items: center;
@@ -1270,7 +1268,7 @@
 
 .learn-btn span {
   background: #14b8a6;
-  color: white;
+  color: #fff;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -1279,15 +1277,103 @@
   justify-content: center;
 }
 
-/* RESPONSIVE */
+/* ================= LARGE LAPTOP ================= */
+@media (max-width: 1400px) {
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+}
 
+/* ================= SMALL LAPTOP ================= */
+@media (max-width: 1100px) {
+  .solutions-section {
+    padding: 70px 18px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .section-header h2 {
+    font-size: 38px;
+  }
+}
+
+/* ================= TABLET ================= */
 @media (max-width: 768px) {
+  .solutions-section {
+    padding: 45px 14px;
+  }
+
   .section-header h2 {
     font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .section-header p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .solution-card {
+    padding: 8px 6px;
   }
 
   .image-circle {
     width: 160px;
     height: 160px;
+  }
+
+  .solution-card h3 {
+    font-size: 22px;
+    margin-top: 18px;
+  }
+
+  .solution-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-top: 12px;
+  }
+
+  .learn-btn {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .solutions-section {
+    padding: 40px 10px;
+  }
+
+  .section-header h2 {
+    font-size: 26px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .image-circle {
+    width: 145px;
+    height: 145px;
+  }
+
+  .solution-card h3 {
+    font-size: 20px;
+  }
+
+  .solution-card p {
+    font-size: 14px;
   }
 }
