@@ -1050,12 +1050,27 @@
 
 /* ================= DIGITAL ENGINEERING ================= */
 
+/* ================= DESKTOP DEFAULT ================= */
+
 .digital-engineering {
   background: #f8fafc;
   padding: 90px 0;
 }
 
+.digital-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #e0e1e3, #0891b2, #dad9e2);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .digital-engineering .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -1063,18 +1078,22 @@
 }
 
 /* LEFT TEXT */
+.engineering-text {
+  text-align: left;
+}
+
 .engineering-text h1 {
   font-size: 38px;
   font-weight: 700;
   color: #0b1f3a;
-  margin-bottom: 20px;
-  margin-left: 200px;
+  margin: 0 0 20px;
 }
 
 .engineering-desc {
   color: #0e0909;
   line-height: 1.7;
   margin-bottom: 30px;
+  font-size: 17px;
 }
 
 .engineering-points .point {
@@ -1083,10 +1102,142 @@
   gap: 12px;
   margin-bottom: 15px;
   font-weight: 500;
+  text-align: left;
 }
 
 .point span {
   font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* ================= LARGE LAPTOP ================= */
+@media (max-width: 1400px) {
+
+  .digital-engineering .container {
+    max-width: 1180px;
+    gap: 45px;
+  }
+
+  .engineering-text h1 {
+    font-size: 34px;
+  }
+}
+
+/* ================= SMALL LAPTOP ================= */
+@media (max-width: 1100px) {
+
+  .digital-section {
+    padding: 65px 18px;
+  }
+
+  .digital-engineering .container {
+    gap: 35px;
+  }
+
+  .engineering-text h1 {
+    font-size: 32px;
+  }
+
+  .engineering-desc {
+    font-size: 16px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+
+  .digital-engineering .container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .engineering-text {
+    text-align: center;
+  }
+
+  .engineering-text h1 {
+    font-size: 30px;
+  }
+
+  .engineering-points .point {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .digital-engineering {
+    padding: 45px 0;
+  }
+
+  .digital-section {
+    padding: 20px 4px 20px 1px;
+    margin: 0;
+    overflow: hidden;
+    max-width: 100%;
+    width: calc(100vw - 60px);
+  }
+
+  .digital-engineering .container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 0;
+  }
+
+  .engineering-text {
+    text-align: center;
+  }
+
+  .engineering-text h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .engineering-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+
+  .engineering-points .point {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .point span {
+    font-size: 20px;
+    margin-top: 1px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+  .digital-section {
+    padding: 35px 10px;
+  }
+
+  .engineering-text h1 {
+    font-size: 24px;
+  }
+
+  .engineering-desc {
+    font-size: 14px;
+  }
+
+  .engineering-points .point {
+    font-size: 14px;
+  }
+
+  .point span {
+    font-size: 18px;
+  }
 }
 
 /* ================= SECTION ================= */
@@ -1103,12 +1254,15 @@
 }
 
 /* GRID LAYOUT (SIDE BY SIDE) */
+/* ================= DESKTOP DEFAULT ================= */
+
 .innovation-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 35px;
-  margin-left: -21px;
-  width: 1308px;
+  width: 100%;
+  max-width: 1308px;
+  margin: 0 auto;
 }
 
 /* CARD BOX */
@@ -1136,6 +1290,7 @@
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
 }
 
 /* CONTENT */
@@ -1148,6 +1303,7 @@
   color: #0b1f3a;
   margin-bottom: 10px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .box-content p {
@@ -1156,19 +1312,110 @@
   font-size: 16px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* ================= LARGE LAPTOP ================= */
+@media (max-width: 1400px) {
+
   .innovation-grid {
-    grid-template-columns: 1fr;
+    max-width: 1180px;
+    gap: 28px;
+  }
+
+  .img-wrapper img {
+    height: 210px;
   }
 }
 
-.digital-section {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #e0e1e3, #0891b2, #dad9e2);
-  text-align: center;
-  width: 1666px;
-  margin-left: -162px;
+/* ================= SMALL LAPTOP ================= */
+@media (max-width: 1100px) {
+
+  .innovation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .box-content h3 {
+    font-size: 24px;
+  }
+
+  .img-wrapper img {
+    height: 200px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+
+  .innovation-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .innovation-box {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .img-wrapper img {
+    height: 240px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .innovation-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .innovation-box {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .img-wrapper {
+    padding: 14px;
+  }
+
+  .img-wrapper img {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .box-content {
+    padding: 0 16px 18px;
+  }
+
+  .box-content h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .box-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+  .img-wrapper img {
+    height: 180px;
+  }
+
+  .box-content h3 {
+    font-size: 20px;
+  }
+
+  .box-content p {
+    font-size: 14px;
+  }
 }
 
 /* ================= DESKTOP DEFAULT ================= */
@@ -1354,9 +1601,7 @@
     padding: 20px 4px 20px 1px;
     margin: 0;
     overflow: hidden;
-    width: calc(100vw - 60px);
     max-width: 100%;
-    border-radius: 18px;
   }
 
   .section-header h2 {
