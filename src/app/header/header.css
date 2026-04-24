@@ -89,54 +89,128 @@
 .contact-btn:hover {
   background: #0056b3;
 }
+/* ================= MOBILE HEADER FINAL FIX ================= */
+@media (max-width: 768px) {
 
-/* Mobile responsive (hide menu or add hamburger later) */
-@media (max-width: 1024px) {
-  .main-nav {
-    display: none;                  /* Hide on small screens - add hamburger if needed */
+  .fixed-white-header {
+    height: auto;
+    padding: 6px 0;
   }
-  
+
   .header-container {
-    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  /* ---------- TOP ROW ---------- */
+  .logo-section {
+    order: 1;
+  }
+
+  .main-nav {
+    order: 2;
+    flex: 1;
+    display: block !important;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .right-section {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  /* ---------- NAV IN CENTER ---------- */
+  .main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    list-style: none;
+  }
+
+  .main-nav li {
+    flex-shrink: 0;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ---------- LOGO ---------- */
+  .logo-img {
+    height: 38px;
+    width: auto;
+  }
+
+  /* ---------- RIGHT SIDE ---------- */
+  .icon-btn.search {
+    order: 1;
+    font-size: 17px;
+    padding: 0;
+  }
+
+  .language {
+    order: 2;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .contact-btn {
+    order: 3;
+    padding: 7px 9px;
+    font-size: 11px;
+    border-radius: 6px;
+    white-space: nowrap;
   }
 }
 
-.main-nav .dropdown {
-  position: relative;
-}
+/* ================= EXTRA SMALL ================= */
+@media (max-width: 480px) {
 
-.main-nav .dropdown-toggle {
-  cursor: pointer;
-}
+  .header-container {
+    padding: 0 6px;
+    gap: 6px;
+  }
 
-.main-nav .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  min-width: 180px;
-  padding: 4px 0;
-  margin: 0;
-  list-style: none;
-  z-index: 1000;
-}
+  .main-nav ul {
+    gap: 12px;
+  }
 
-.main-nav .dropdown:hover .dropdown-menu {
-  display: block;
-}
+  .main-nav a {
+    font-size: 12px;
+  }
 
-.main-nav .dropdown-menu li a {
-  display: block;
-  padding: 6px 16px;
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-}
+  .logo-img {
+    height: 34px;
+  }
 
-.main-nav .dropdown-menu li a:hover {
-  background: #f0f5ff;
-  color: #2563eb;
+  .icon-btn.search {
+    font-size: 15px;
+  }
+
+  .language {
+    font-size: 11px;
+  }
+
+  .contact-btn {
+    font-size: 10px;
+    padding: 6px 7px;
+  }
 }
